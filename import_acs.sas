@@ -4,7 +4,7 @@
 *** 2. compare these datasets with PUMS yearly datasets;
 
 * http://goo.gl/BzNdgX Specifying SPOOL is especially helpful in interactive line mode because you can resubmit a line or lines of code by referring to the line numbers.;
-option spool;
+* option spool;
 option compress = yes;
 
 * 'a' means ACS;
