@@ -1,0 +1,942 @@
+                                                           The SAS System                           11:34 Friday, April 17, 2015   1
+
+                                                       The COMPARE Procedure
+                                                Comparison of F.P2005H with F.A2005
+                                                           (Method=EXACT)
+
+                                                         Data Set Summary
+
+                                     Dataset            Created          Modified  NVar    NObs
+
+                                     F.P2005H  17APR15:11:16:31  17APR15:11:16:31   188 1245246
+                                     F.A2005   17APR15:11:02:08  17APR15:11:02:08   495 2964564
+
+
+                                                         Variables Summary
+
+                                      Number of Variables in Common: 125.
+                                      Number of Variables in F.P2005H but not in F.A2005: 63.
+                                      Number of Variables in F.A2005 but not in F.P2005H: 370.
+                                      Number of Variables with Conflicting Types: 32.
+                                      Number of Variables with Differing Attributes: 93.
+
+
+                                         Listing of Common Variables with Conflicting Types
+
+                      Variable  Dataset   Type  Length  Format  Label
+
+                      SERIALNO  F.P2005H  Char       7  $7.     Serial number
+                                F.A2005   Num        8          Household ID
+                      DIVISION  F.P2005H  Char       1  $1.     Division
+                                F.A2005   Num        8          Division
+                      PUMA      F.P2005H  Char       5  $5.     Puma Code
+                                F.A2005   Num        8          PUMA
+                      REGION    F.P2005H  Char       1  $1.     Region
+                                F.A2005   Num        8          REGION
+                      TYPE      F.P2005H  Char       1  $1.     Type of unit
+                                F.A2005   Num        8          Housing type
+                      ACR       F.P2005H  Char       1  $1.     Lot size
+                                F.A2005   Num        8          Lot size (acres)
+                      AGS       F.P2005H  Char       1  $1.     Agricultural sales of $1000 or more
+                                F.A2005   Num        8          Sales of ag products ($/Yr)
+                      BLD       F.P2005H  Char       2  $2.     Type of building
+                                F.A2005   Num        8          Units in structure
+                      BUS       F.P2005H  Char       1  $1.     Business on property
+                                F.A2005   Num        8          Business or medical office on property
+                      HFL       F.P2005H  Char       1  $1.     Type of fuel
+                                F.A2005   Num        8          Heating fuel type
+                      MRGI      F.P2005H  Char       1  $1.     Mortgage payment includes insurance
+                                F.A2005   Num        8          Mortgage includes fire/hazard/flood insurance
+                      MRGT      F.P2005H  Char       1  $1.     Mortgage payment includes real estate  tax
+                                F.A2005   Num        8          Mortgage includes real estate taxes
+                      MRGX      F.P2005H  Char       1  $1.     Mortgage
+                                F.A2005   Num        8          Mortgage status
+                      RNTM      F.P2005H  Char       1  $1.     Meals included in rent
+                                F.A2005   Num        8          Meals included in rent
+                      TEL       F.P2005H  Char       1  $1.     Telephone  (not CATI)
+                                F.A2005   Num        8          Telephone in Unit
+                      TEN       F.P2005H  Char       1  $1.     Tenure
+                                F.A2005   Num        8          Housing tenure
+                                                           The SAS System                           11:34 Friday, April 17, 2015   2
+
+                                                       The COMPARE Procedure
+                                                Comparison of F.P2005H with F.A2005
+                                                           (Method=EXACT)
+
+                                         Listing of Common Variables with Conflicting Types
+
+                      Variable  Dataset   Type  Length  Format  Label
+
+                      VACS      F.P2005H  Char       1  $1.     Vacancy Status CAPI/TFU
+                                F.A2005   Num        8          Vacancy status
+                      VEH       F.P2005H  Char       1  $1.     Number of vehicles
+                                F.A2005   Num        8          Vehicles
+                      FES       F.P2005H  Char       1  $1.     Family type and employment status
+                                F.A2005   Num        8          Family and Employment Status
+                      HHL       F.P2005H  Char       1  $1.     Household language
+                                F.A2005   Num        8          Household language
+                      HHT       F.P2005H  Char       1  $1.     Household/family type
+                                F.A2005   Num        8          Household/family type
+                      MV        F.P2005H  Char       1  $1.     Moved in
+                                F.A2005   Num        8          How long living here (years)
+                      NPP       F.P2005H  Char       1  $1.     GP headed HH with no parent present
+                                F.A2005   Num        8          Grandparent headed household
+                      NR        F.P2005H  Char       1  $1.     Presence of nonrelative in household
+                                F.A2005   Num        8          Presence of nonrelative
+                      PSF       F.P2005H  Char       1  $1.     Presence of subfamilies in household
+                                F.A2005   Num        8          Presence of subfamilies in HH
+                      RESMODE   F.P2005H  Char       1  $1.     Response mode
+                                F.A2005   Num        8          Response mode
+                      SMX       F.P2005H  Char       1  $1.     Second mortgage combined checkbox
+                                F.A2005   Num        8          2nd mortgage, HEL status
+                      SRNT      F.P2005H  Char       1  $1.     Specified rent
+                                F.A2005   Num        8          Specified rent unit
+                      SVAL      F.P2005H  Char       1  $1.     Specified value
+                                F.A2005   Num        8          Specified value owner unit
+                      TAXP      F.P2005H  Char       2  $2.     Categorized yearly real estate taxes
+                                F.A2005   Num        8          Property Tax, ($/Yr)
+                      WIF       F.P2005H  Char       1  $1.     Workers in family
+                                F.A2005   Num        8          Workers in Family
+                      WKEXREL   F.P2005H  Char       2  $2.     Work experience of householder and spouse
+                                F.A2005   Num        8          Work Experience Householder, Spouse
+
+
+                                       Listing of Common Variables with Differing Attributes
+
+                         Variable  Dataset   Type  Length  Format  Label
+
+                         CONP      F.P2005H  Num        4  Z4.     PUMS Monthly condominium fee
+                                   F.A2005   Num        8          Condo fee ($/month)
+                         ELEP      F.P2005H  Num        3  Z3.     PUMS Monthly electricity cost
+                                   F.A2005   Num        8          Electricity ($/month)
+                         FULP      F.P2005H  Num        3  Z4.     PUMS Yearly other fuel cost
+                                   F.A2005   Num        8          Other fuel ($/month)
+                         GASP      F.P2005H  Num        3  Z3.     PUMS Monthly gas cost
+                                   F.A2005   Num        8          Natural gas ($/month)
+                         INSP      F.P2005H  Num        3  Z4.     PUMS Property insurance
+                                   F.A2005   Num        8          Fire/hazard/flood insurance ($/month)
+                                                           The SAS System                           11:34 Friday, April 17, 2015   3
+
+                                                       The COMPARE Procedure
+                                                Comparison of F.P2005H with F.A2005
+                                                           (Method=EXACT)
+
+                                       Listing of Common Variables with Differing Attributes
+
+                         Variable  Dataset   Type  Length  Format  Label
+
+                         MHP       F.P2005H  Num        4  Z5.     PUMS Yearly mobile home costs
+                                   F.A2005   Num        8          Mobile home costs ($/month)
+                         MRGP      F.P2005H  Num        4  Z5.     PUMS Monthly mortgage payment
+                                   F.A2005   Num        8          Mortgage payment ($/month)
+                         RNTP      F.P2005H  Num        4  Z5.     PUMS Monthly rent
+                                   F.A2005   Num        8          Rent ($/month)
+                         SMP       F.P2005H  Num        4  Z5.     PUMS Monthly other mortgage  payment(s)
+                                   F.A2005   Num        8          2nd mortgage payment ($/month)
+                         WATP      F.P2005H  Num        3  Z4.     PUMS Yearly  water and sewer cost
+                                   F.A2005   Num        8          Water ($/month)
+                         GRNTP     F.P2005H  Num        4  Z4.     PUMS Gross rent
+                                   F.A2005   Num        8          Gross rent ($/month)
+                         NOC       F.P2005H  Num        3  Z2.     Number of own children
+                                   F.A2005   Num        8          Number of own children
+                         SMOCP     F.P2005H  Num        4  Z5.     PUMS Selected monthly owner costs
+                                   F.A2005   Num        8          Selected monthly owner costs ($/month)
+                         wgtp1     F.P2005H  Num        3  Z4.
+                                   F.A2005   Num        8          Housing weight replicate 1
+                         wgtp2     F.P2005H  Num        3  Z4.
+                                   F.A2005   Num        8          Housing weight replicate 2
+                         wgtp3     F.P2005H  Num        3  Z4.
+                                   F.A2005   Num        8          Housing weight replicate 3
+                         wgtp4     F.P2005H  Num        3  Z4.
+                                   F.A2005   Num        8          Housing weight replicate 4
+                         wgtp5     F.P2005H  Num        3  Z4.
+                                   F.A2005   Num        8          Housing weight replicate 5
+                         wgtp6     F.P2005H  Num        3  Z4.
+                                   F.A2005   Num        8          Housing weight replicate 6
+                         wgtp7     F.P2005H  Num        3  Z4.
+                                   F.A2005   Num        8          Housing weight replicate 7
+                         wgtp8     F.P2005H  Num        3  Z4.
+                                   F.A2005   Num        8          Housing weight replicate 8
+                         wgtp9     F.P2005H  Num        3  Z4.
+                                   F.A2005   Num        8          Housing weight replicate 9
+                         wgtp10    F.P2005H  Num        3  Z4.
+                                   F.A2005   Num        8          Housing weight replicate 10
+                         wgtp11    F.P2005H  Num        3  Z4.
+                                   F.A2005   Num        8          Housing weight replicate 11
+                         wgtp12    F.P2005H  Num        3  Z4.
+                                   F.A2005   Num        8          Housing weight replicate 12
+                         wgtp13    F.P2005H  Num        3  Z4.
+                                   F.A2005   Num        8          Housing weight replicate 13
+                         wgtp14    F.P2005H  Num        3  Z4.
+                                   F.A2005   Num        8          Housing weight replicate 14
+                         wgtp15    F.P2005H  Num        3  Z4.
+                                   F.A2005   Num        8          Housing weight replicate 15
+                         wgtp16    F.P2005H  Num        3  Z4.
+                                   F.A2005   Num        8          Housing weight replicate 16
+                                                           The SAS System                           11:34 Friday, April 17, 2015   4
+
+                                                       The COMPARE Procedure
+                                                Comparison of F.P2005H with F.A2005
+                                                           (Method=EXACT)
+
+                                       Listing of Common Variables with Differing Attributes
+
+                         Variable  Dataset   Type  Length  Format  Label
+
+                         wgtp17    F.P2005H  Num        3  Z4.
+                                   F.A2005   Num        8          Housing weight replicate 17
+                         wgtp18    F.P2005H  Num        3  Z4.
+                                   F.A2005   Num        8          Housing weight replicate 18
+                         wgtp19    F.P2005H  Num        3  Z4.
+                                   F.A2005   Num        8          Housing weight replicate 19
+                         wgtp20    F.P2005H  Num        3  Z4.
+                                   F.A2005   Num        8          Housing weight replicate 20
+                         wgtp21    F.P2005H  Num        3  Z4.
+                                   F.A2005   Num        8          Housing weight replicate 21
+                         wgtp22    F.P2005H  Num        3  Z4.
+                                   F.A2005   Num        8          Housing weight replicate 22
+                         wgtp23    F.P2005H  Num        3  Z4.
+                                   F.A2005   Num        8          Housing weight replicate 23
+                         wgtp24    F.P2005H  Num        3  Z4.
+                                   F.A2005   Num        8          Housing weight replicate 24
+                         wgtp25    F.P2005H  Num        3  Z4.
+                                   F.A2005   Num        8          Housing weight replicate 25
+                         wgtp26    F.P2005H  Num        3  Z4.
+                                   F.A2005   Num        8          Housing weight replicate 26
+                         wgtp27    F.P2005H  Num        3  Z4.
+                                   F.A2005   Num        8          Housing weight replicate 27
+                         wgtp28    F.P2005H  Num        3  Z4.
+                                   F.A2005   Num        8          Housing weight replicate 28
+                         wgtp29    F.P2005H  Num        3  Z4.
+                                   F.A2005   Num        8          Housing weight replicate 29
+                         wgtp30    F.P2005H  Num        3  Z4.
+                                   F.A2005   Num        8          Housing weight replicate 30
+                         wgtp31    F.P2005H  Num        3  Z4.
+                                   F.A2005   Num        8          Housing weight replicate 31
+                         wgtp32    F.P2005H  Num        3  Z4.
+                                   F.A2005   Num        8          Housing weight replicate 32
+                         wgtp33    F.P2005H  Num        3  Z4.
+                                   F.A2005   Num        8          Housing weight replicate 33
+                         wgtp34    F.P2005H  Num        3  Z4.
+                                   F.A2005   Num        8          Housing weight replicate 34
+                         wgtp35    F.P2005H  Num        3  Z4.
+                                   F.A2005   Num        8          Housing weight replicate 35
+                         wgtp36    F.P2005H  Num        3  Z4.
+                                   F.A2005   Num        8          Housing weight replicate 36
+                         wgtp37    F.P2005H  Num        3  Z4.
+                                   F.A2005   Num        8          Housing weight replicate 37
+                         wgtp38    F.P2005H  Num        3  Z4.
+                                   F.A2005   Num        8          Housing weight replicate 38
+                         wgtp39    F.P2005H  Num        3  Z4.
+                                   F.A2005   Num        8          Housing weight replicate 39
+                         wgtp40    F.P2005H  Num        3  Z4.
+                                   F.A2005   Num        8          Housing weight replicate 40
+                                                           The SAS System                           11:34 Friday, April 17, 2015   5
+
+                                                       The COMPARE Procedure
+                                                Comparison of F.P2005H with F.A2005
+                                                           (Method=EXACT)
+
+                                       Listing of Common Variables with Differing Attributes
+
+                         Variable  Dataset   Type  Length  Format  Label
+
+                         wgtp41    F.P2005H  Num        3  Z4.
+                                   F.A2005   Num        8          Housing weight replicate 41
+                         wgtp42    F.P2005H  Num        3  Z4.
+                                   F.A2005   Num        8          Housing weight replicate 42
+                         wgtp43    F.P2005H  Num        3  Z4.
+                                   F.A2005   Num        8          Housing weight replicate 43
+                         wgtp44    F.P2005H  Num        3  Z4.
+                                   F.A2005   Num        8          Housing weight replicate 44
+                         wgtp45    F.P2005H  Num        3  Z4.
+                                   F.A2005   Num        8          Housing weight replicate 45
+                         wgtp46    F.P2005H  Num        3  Z4.
+                                   F.A2005   Num        8          Housing weight replicate 46
+                         wgtp47    F.P2005H  Num        3  Z4.
+                                   F.A2005   Num        8          Housing weight replicate 47
+                         wgtp48    F.P2005H  Num        3  Z4.
+                                   F.A2005   Num        8          Housing weight replicate 48
+                         wgtp49    F.P2005H  Num        3  Z4.
+                                   F.A2005   Num        8          Housing weight replicate 49
+                         wgtp50    F.P2005H  Num        3  Z4.
+                                   F.A2005   Num        8          Housing weight replicate 50
+                         wgtp51    F.P2005H  Num        3  Z4.
+                                   F.A2005   Num        8          Housing weight replicate 51
+                         wgtp52    F.P2005H  Num        3  Z4.
+                                   F.A2005   Num        8          Housing weight replicate 52
+                         wgtp53    F.P2005H  Num        3  Z4.
+                                   F.A2005   Num        8          Housing weight replicate 53
+                         wgtp54    F.P2005H  Num        3  Z4.
+                                   F.A2005   Num        8          Housing weight replicate 54
+                         wgtp55    F.P2005H  Num        3  Z4.
+                                   F.A2005   Num        8          Housing weight replicate 55
+                         wgtp56    F.P2005H  Num        3  Z4.
+                                   F.A2005   Num        8          Housing weight replicate 56
+                         wgtp57    F.P2005H  Num        3  Z4.
+                                   F.A2005   Num        8          Housing weight replicate 57
+                         wgtp58    F.P2005H  Num        3  Z4.
+                                   F.A2005   Num        8          Housing weight replicate 58
+                         wgtp59    F.P2005H  Num        3  Z4.
+                                   F.A2005   Num        8          Housing weight replicate 59
+                         wgtp60    F.P2005H  Num        3  Z4.
+                                   F.A2005   Num        8          Housing weight replicate 60
+                         wgtp61    F.P2005H  Num        3  Z4.
+                                   F.A2005   Num        8          Housing weight replicate 61
+                         wgtp62    F.P2005H  Num        3  Z4.
+                                   F.A2005   Num        8          Housing weight replicate 62
+                         wgtp63    F.P2005H  Num        3  Z4.
+                                   F.A2005   Num        8          Housing weight replicate 63
+                         wgtp64    F.P2005H  Num        3  Z4.
+                                   F.A2005   Num        8          Housing weight replicate 64
+                                                           The SAS System                           11:34 Friday, April 17, 2015   6
+
+                                                       The COMPARE Procedure
+                                                Comparison of F.P2005H with F.A2005
+                                                           (Method=EXACT)
+
+                                       Listing of Common Variables with Differing Attributes
+
+                         Variable  Dataset   Type  Length  Format  Label
+
+                         wgtp65    F.P2005H  Num        3  Z4.
+                                   F.A2005   Num        8          Housing weight replicate 65
+                         wgtp66    F.P2005H  Num        3  Z4.
+                                   F.A2005   Num        8          Housing weight replicate 66
+                         wgtp67    F.P2005H  Num        3  Z4.
+                                   F.A2005   Num        8          Housing weight replicate 67
+                         wgtp68    F.P2005H  Num        3  Z4.
+                                   F.A2005   Num        8          Housing weight replicate 68
+                         wgtp69    F.P2005H  Num        3  Z4.
+                                   F.A2005   Num        8          Housing weight replicate 69
+                         wgtp70    F.P2005H  Num        3  Z4.
+                                   F.A2005   Num        8          Housing weight replicate 70
+                         wgtp71    F.P2005H  Num        3  Z4.
+                                   F.A2005   Num        8          Housing weight replicate 71
+                         wgtp72    F.P2005H  Num        3  Z4.
+                                   F.A2005   Num        8          Housing weight replicate 72
+                         wgtp73    F.P2005H  Num        3  Z4.
+                                   F.A2005   Num        8          Housing weight replicate 73
+                         wgtp74    F.P2005H  Num        3  Z4.
+                                   F.A2005   Num        8          Housing weight replicate 74
+                         wgtp75    F.P2005H  Num        3  Z4.
+                                   F.A2005   Num        8          Housing weight replicate 75
+                         wgtp76    F.P2005H  Num        3  Z4.
+                                   F.A2005   Num        8          Housing weight replicate 76
+                         wgtp77    F.P2005H  Num        3  Z4.
+                                   F.A2005   Num        8          Housing weight replicate 77
+                         wgtp78    F.P2005H  Num        3  Z4.
+                                   F.A2005   Num        8          Housing weight replicate 78
+                         wgtp79    F.P2005H  Num        3  Z4.
+                                   F.A2005   Num        8          Housing weight replicate 79
+                         wgtp80    F.P2005H  Num        3  Z4.
+                                   F.A2005   Num        8          Housing weight replicate 80
+
+
+                                                        Observation Summary
+
+                                                   Observation      Base  Compare
+
+                                                   First Obs           1        1
+                                                   First Unequal       1        1
+                                                   Last  Unequal 1245246  1245246
+                                                   Last  Match   1245246  1245246
+                                                   Last  Obs           .  2964564
+
+                               Number of Observations in Common: 1245246.
+                               Number of Observations in F.A2005 but not in F.P2005H: 1719318.
+                               Total Number of Observations Read from F.P2005H: 1245246.
+                               Total Number of Observations Read from F.A2005: 2964564.
+
+                               Number of Observations with Some Compared Variables Unequal: 1245246.
+                                                           The SAS System                           11:34 Friday, April 17, 2015   7
+
+                                                       The COMPARE Procedure
+                                                Comparison of F.P2005H with F.A2005
+                                                           (Method=EXACT)
+
+                               Number of Observations with All Compared Variables Equal: 0.
+
+
+                                                     Values Comparison Summary
+
+                                  Number of Variables Compared with All Observations Equal: 0.
+                                  Number of Variables Compared with Some Observations Unequal: 93.
+                                  Number of Variables with Missing Value Differences: 13.
+                                  Total Number of Values which Compare Unequal: 109367902.
+                                  Maximum Difference: 14683.
+
+
+                                             All Variables Compared have Unequal Values
+
+                   Variable  Type  Len1 Len2   Label                                    Ndif   MaxDif  MissDif
+
+                   CONP      NUM      4    8   PUMS Monthly condominium fee            85808     1560    84316
+                   ELEP      NUM      3    8   PUMS Monthly electricity cost          1.19E6      580   117453
+                   FULP      NUM      3    8   PUMS Yearly other fuel cost            1.24E6     6500   117453
+                   GASP      NUM      3    8   PUMS Monthly gas cost                  1.22E6      590   117453
+                   INSP      NUM      3    8   PUMS Property insurance                1.14E6     7100   510761
+                   MHP       NUM      4    8   PUMS Yearly mobile home costs           99917    12733    97887
+                   MRGP      NUM      4    8   PUMS Monthly mortgage payment          918127     7670   627207
+                   RNTP      NUM      4    8   PUMS Monthly rent                      505615     3670   441015
+                   SMP       NUM      4    8   PUMS Monthly other mortgage  payment(s)304199     4850   283756
+                   WATP      NUM      3    8   PUMS Yearly  water and sewer cost      1.24E6     4100   117453
+                   GRNTP     NUM      4    8   PUMS Gross rent                        486180     4060   426371
+                   NOC       NUM      3    8   Number of own children                 769364   13.000   117453
+                   SMOCP     NUM      4    8   PUMS Selected monthly owner costs      1.14E6    14683   510761
+                   wgtp1     NUM      3    8                                          1.24E6     1922        0
+                   wgtp2     NUM      3    8                                          1.24E6     3039        0
+                   wgtp3     NUM      3    8                                          1.24E6     3082        0
+                   wgtp4     NUM      3    8                                          1.24E6     2761        0
+                   wgtp5     NUM      3    8                                          1.24E6     2801        0
+                   wgtp6     NUM      3    8                                          1.24E6     2995        0
+                   wgtp7     NUM      3    8                                          1.24E6     2889        0
+                   wgtp8     NUM      3    8                                          1.24E6     2912        0
+                   wgtp9     NUM      3    8                                          1.24E6     2688        0
+                   wgtp10    NUM      3    8                                          1.24E6     3060        0
+                   wgtp11    NUM      3    8                                          1.24E6     3040        0
+                   wgtp12    NUM      3    8                                          1.24E6     2822        0
+                   wgtp13    NUM      3    8                                          1.24E6     2819        0
+                   wgtp14    NUM      3    8                                          1.24E6     2781        0
+                   wgtp15    NUM      3    8                                          1.24E6     2914        0
+                   wgtp16    NUM      3    8                                          1.24E6     2970        0
+                   wgtp17    NUM      3    8                                          1.24E6     2831        0
+                   wgtp18    NUM      3    8                                          1.24E6     2735        0
+                   wgtp19    NUM      3    8                                          1.24E6     3121        0
+                   wgtp20    NUM      3    8                                          1.24E6     2960        0
+                   wgtp21    NUM      3    8                                          1.24E6     3429        0
+                   wgtp22    NUM      3    8                                          1.24E6     2517        0
+                   wgtp23    NUM      3    8                                          1.24E6     3166        0
+                   wgtp24    NUM      3    8                                          1.24E6     3009        0
+                                                           The SAS System                           11:34 Friday, April 17, 2015   8
+
+                                                       The COMPARE Procedure
+                                                Comparison of F.P2005H with F.A2005
+                                                           (Method=EXACT)
+
+                                             All Variables Compared have Unequal Values
+
+                   Variable  Type  Len1 Len2   Label                                    Ndif   MaxDif  MissDif
+
+                   wgtp25    NUM      3    8                                          1.24E6     2948        0
+                   wgtp26    NUM      3    8                                          1.24E6     2834        0
+                   wgtp27    NUM      3    8                                          1.24E6     3110        0
+                   wgtp28    NUM      3    8                                          1.24E6     2982        0
+                   wgtp29    NUM      3    8                                          1.24E6     3299        0
+                   wgtp30    NUM      3    8                                          1.24E6     3182        0
+                   wgtp31    NUM      3    8                                          1.24E6     2847        0
+                   wgtp32    NUM      3    8                                          1.24E6     3197        0
+                   wgtp33    NUM      3    8                                          1.24E6     2903        0
+                   wgtp34    NUM      3    8                                          1.24E6     2904        0
+                   wgtp35    NUM      3    8                                          1.24E6     2808        0
+                   wgtp36    NUM      3    8                                          1.24E6     2898        0
+                   wgtp37    NUM      3    8                                          1.24E6     3341        0
+                   wgtp38    NUM      3    8                                          1.24E6     2971        0
+                   wgtp39    NUM      3    8                                          1.24E6     2713        0
+                   wgtp40    NUM      3    8                                          1.24E6     2889        0
+                   wgtp41    NUM      3    8                                          1.24E6     1918        0
+                   wgtp42    NUM      3    8                                          1.24E6     3213        0
+                   wgtp43    NUM      3    8                                          1.24E6     2852        0
+                   wgtp44    NUM      3    8                                          1.24E6     2581        0
+                   wgtp45    NUM      3    8                                          1.24E6     3075        0
+                   wgtp46    NUM      3    8                                          1.24E6     2922        0
+                   wgtp47    NUM      3    8                                          1.24E6     3449        0
+                   wgtp48    NUM      3    8                                          1.24E6     3204        0
+                   wgtp49    NUM      3    8                                          1.24E6     2756        0
+                   wgtp50    NUM      3    8                                          1.24E6     2898        0
+                   wgtp51    NUM      3    8                                          1.24E6     3147        0
+                   wgtp52    NUM      3    8                                          1.24E6     3055        0
+                   wgtp53    NUM      3    8                                          1.24E6     2986        0
+                   wgtp54    NUM      3    8                                          1.24E6     3294        0
+                   wgtp55    NUM      3    8                                          1.24E6     2858        0
+                   wgtp56    NUM      3    8                                          1.24E6     3059        0
+                   wgtp57    NUM      3    8                                          1.24E6     2889        0
+                   wgtp58    NUM      3    8                                          1.24E6     3064        0
+                   wgtp59    NUM      3    8                                          1.24E6     2651        0
+                   wgtp60    NUM      3    8                                          1.24E6     3052        0
+                   wgtp61    NUM      3    8                                          1.24E6     3006        0
+                   wgtp62    NUM      3    8                                          1.24E6     3300        0
+                   wgtp63    NUM      3    8                                          1.24E6     2979        0
+                   wgtp64    NUM      3    8                                          1.24E6     2957        0
+                   wgtp65    NUM      3    8                                          1.24E6     3143        0
+                   wgtp66    NUM      3    8                                          1.24E6     2918        0
+                   wgtp67    NUM      3    8                                          1.24E6     3435        0
+                   wgtp68    NUM      3    8                                          1.24E6     3068        0
+                   wgtp69    NUM      3    8                                          1.24E6     3519        0
+                   wgtp70    NUM      3    8                                          1.24E6     2973        0
+                   wgtp71    NUM      3    8                                          1.24E6     2878        0
+                   wgtp72    NUM      3    8                                          1.24E6     2960        0
+                   wgtp73    NUM      3    8                                          1.24E6     3273        0
+                                                           The SAS System                           11:34 Friday, April 17, 2015   9
+
+                                                       The COMPARE Procedure
+                                                Comparison of F.P2005H with F.A2005
+                                                           (Method=EXACT)
+
+                                             All Variables Compared have Unequal Values
+
+                   Variable  Type  Len1 Len2   Label                                    Ndif   MaxDif  MissDif
+
+                   wgtp74    NUM      3    8                                          1.24E6     2695        0
+                   wgtp75    NUM      3    8                                          1.24E6     2765        0
+                   wgtp76    NUM      3    8                                          1.24E6     3158        0
+                   wgtp77    NUM      3    8                                          1.24E6     3446        0
+                   wgtp78    NUM      3    8                                          1.24E6     2775        0
+                   wgtp79    NUM      3    8                                          1.24E6     2623        0
+                   wgtp80    NUM      3    8                                          1.24E6     2984        0
+
+                                                           The SAS System                           11:34 Friday, April 17, 2015  10
+
+                                                       The COMPARE Procedure
+                                                Comparison of F.P2005P with F.A2005
+                                                           (Method=EXACT)
+
+                                                         Data Set Summary
+
+                                     Dataset            Created          Modified  NVar    NObs
+
+                                     F.P2005P  17APR15:11:17:00  17APR15:11:17:00   238 2878380
+                                     F.A2005   17APR15:11:02:08  17APR15:11:02:08   495 2964564
+
+
+                                                         Variables Summary
+
+                                      Number of Variables in Common: 122.
+                                      Number of Variables in F.P2005P but not in F.A2005: 116.
+                                      Number of Variables in F.A2005 but not in F.P2005P: 373.
+                                      Number of Variables with Conflicting Types: 37.
+                                      Number of Variables with Differing Attributes: 85.
+
+
+                                         Listing of Common Variables with Conflicting Types
+
+                        Variable  Dataset   Type  Length  Format  Label
+
+                        SERIALNO  F.P2005P  Char       7  $7.     Serial number
+                                  F.A2005   Num        8          Household ID
+                        PUMA      F.P2005P  Char       5  $5.     Puma Code
+                                  F.A2005   Num        8          PUMA
+                        ENG       F.P2005P  Char       1  $1.     English ability
+                                  F.A2005   Num        8          Ability to speak English
+                        FER       F.P2005P  Char       1  $1.     Fertility
+                                  F.A2005   Num        8          Child born w/in past year
+                        GCR       F.P2005P  Char       1  $1.     Responsible for grandchildren
+                                  F.A2005   Num        8          Responsible for grandchildren
+                        JWTR      F.P2005P  Char       2  $2.     Transportation to work
+                                  F.A2005   Num        8          Means of transportation to work
+                        LANX      F.P2005P  Char       1  $1.     Speaks another language at home
+                                  F.A2005   Num        8          Language other than English spoken at home
+                        MAR       F.P2005P  Char       1  $1.     Marital status
+                                  F.A2005   Num        8          Marital Status
+                        MIG       F.P2005P  Char       1  $1.     Mobility status
+                                  F.A2005   Num        8          Mobility Status (lived here 1 year ago)
+                        NWAB      F.P2005P  Char       1  $1.     Temporarily absent from work
+                                  F.A2005   Num        8          Temporary Absence from Work
+                        NWAV      F.P2005P  Char       1  $1.     Available for Work
+                                  F.A2005   Num        8          Available for Work
+                        NWLA      F.P2005P  Char       1  $1.     On layoff
+                                  F.A2005   Num        8          On layoff from work
+                        NWLK      F.P2005P  Char       1  $1.     Looking for work
+                                  F.A2005   Num        8          Looking for Work
+                        WKL       F.P2005P  Char       1  $1.     When last worked
+                                  F.A2005   Num        8          When Last Worked
+                        ANC       F.P2005P  Char       1  $1.     Ancestry categorization
+                                  F.A2005   Num        8          Ancestry Recode
+                        ESP       F.P2005P  Char       1  $1.     Employment status of parents
+                                  F.A2005   Num        8          Employment Status of Parents
+                                                           The SAS System                           11:34 Friday, April 17, 2015  11
+
+                                                       The COMPARE Procedure
+                                                Comparison of F.P2005P with F.A2005
+                                                           (Method=EXACT)
+
+                                         Listing of Common Variables with Conflicting Types
+
+                        Variable  Dataset   Type  Length  Format  Label
+
+                        HISP      F.P2005P  Char       2  $2.     Hispanic recode
+                                  F.A2005   Num        8          Hispanic, Detailed
+                        JWAP      F.P2005P  Char       3  $3.     Time of arrival at work categorization
+                                  F.A2005   Num        8          Time of arrival at work (hr & min)
+                        JWDP      F.P2005P  Char       3  $3.     Time of departure for work categorization
+                                  F.A2005   Num        8          Time of departure for work (hr & min)
+                        LANP      F.P2005P  Char       3  $3.     Other language recode 5%
+                                  F.A2005   Num        8          Language spoken at home
+                        MIGPUMA   F.P2005P  Char       5  $5.     Migration PUMA
+                                  F.A2005   Num        8          Migration PUMA
+                        MIGSP     F.P2005P  Char       3  $3.     Migration state/foreign country recode 5%
+                                  F.A2005   Num        8          Migration recode
+                        POWPUMA   F.P2005P  Char       5  $5.     Place of work PUMA
+                                  F.A2005   Num        8          Place of Work PUMA
+                        POWSP     F.P2005P  Char       3  $3.     Place of work state/fgn countyy recode 5%
+                                  F.A2005   Num        8          Place of Work
+                        RAC1P     F.P2005P  Char       1  $1.     Race1 recode
+                                  F.A2005   Num        8          Race/Ethnicity
+                        RAC2P     F.P2005P  Char       2  $2.     Race2 recode
+                                  F.A2005   Num        8          Race/Ethnicity
+                        RAC3P     F.P2005P  Char       2  $2.     Race3 recode
+                                  F.A2005   Num        8          Race/Ethnicity
+                        RACAIAN   F.P2005P  Char       1  $1.     Race includes AIAN
+                                  F.A2005   Num        8          American Indian
+                        RACASN    F.P2005P  Char       1  $1.     Race includes Asian
+                                  F.A2005   Num        8          Asian
+                        RACBLK    F.P2005P  Char       1  $1.     Race includes Black
+                                  F.A2005   Num        8          Black
+                        RACNHPI   F.P2005P  Char       1  $1.     Race includes NHPI
+                                  F.A2005   Num        8          Native Hawaiian, Pacific Islander
+                        RACNUM    F.P2005P  Char       1  $1.     Number of race groups represented
+                                  F.A2005   Num        8          Number of races
+                        RACWHT    F.P2005P  Char       1  $1.     Race includes White
+                                  F.A2005   Num        8          White
+                        SFR       F.P2005P  Char       1  $1.     Subfamily Relationship
+                                  F.A2005   Num        8          Subfamily relationship
+                        WAOB      F.P2005P  Char       1  $1.     World area of birth
+                                  F.A2005   Num        8          World Area of Birth
+                        FMIGP     F.P2005P  Char       1  $1.     PUMS Mobility Status allocation flag
+                                  F.A2005   Num        8          Mobility status allocation flag
+                        FMIGSP    F.P2005P  Char       1  $1.     PUMS Migration State allocation flag
+                                  F.A2005   Num        8          Migration state allocation flag
+                                                           The SAS System                           11:34 Friday, April 17, 2015  12
+
+                                                       The COMPARE Procedure
+                                                Comparison of F.P2005P with F.A2005
+                                                           (Method=EXACT)
+
+                                       Listing of Common Variables with Differing Attributes
+
+                               Variable  Dataset   Type  Length  Format  Label
+
+                               sporder   F.P2005P  Num        8  Z2.     Person key after swapping
+                                         F.A2005   Num        8          Person Number
+                               JWMNP     F.P2005P  Num        3  Z3.     PUMS Minutes to work
+                                         F.A2005   Num        8          Travel time to work (mins)
+                               JWRIP     F.P2005P  Num        3  Z2.     PUMS Total riders
+                                         F.A2005   Num        8          Vehicle occupancy (to work)
+                               YOEP      F.P2005P  Num        3  Z4.     PUMS Year of entry
+                                         F.A2005   Num        8          Year of Entry
+                               POVPIP    F.P2005P  Num        3  Z3.     PUMS Poverty index
+                                         F.A2005   Num        8          Percent of poverty status
+                               pwgtp1    F.P2005P  Num        3  Z4.
+                                         F.A2005   Num        8          Person's weight replicate 1
+                               pwgtp2    F.P2005P  Num        3  Z4.
+                                         F.A2005   Num        8          Person's weight replicate 2
+                               pwgtp3    F.P2005P  Num        3  Z4.
+                                         F.A2005   Num        8          Person's weight replicate 3
+                               pwgtp4    F.P2005P  Num        3  Z4.
+                                         F.A2005   Num        8          Person's weight replicate 4
+                               pwgtp5    F.P2005P  Num        3  Z4.
+                                         F.A2005   Num        8          Person's weight replicate 5
+                               pwgtp6    F.P2005P  Num        3  Z4.
+                                         F.A2005   Num        8          Person's weight replicate 6
+                               pwgtp7    F.P2005P  Num        3  Z4.
+                                         F.A2005   Num        8          Person's weight replicate 7
+                               pwgtp8    F.P2005P  Num        3  Z4.
+                                         F.A2005   Num        8          Person's weight replicate 8
+                               pwgtp9    F.P2005P  Num        3  Z4.
+                                         F.A2005   Num        8          Person's weight replicate 9
+                               pwgtp10   F.P2005P  Num        3  Z4.
+                                         F.A2005   Num        8          Person's weight replicate 10
+                               pwgtp11   F.P2005P  Num        3  Z4.
+                                         F.A2005   Num        8          Person's weight replicate 11
+                               pwgtp12   F.P2005P  Num        3  Z4.
+                                         F.A2005   Num        8          Person's weight replicate 12
+                               pwgtp13   F.P2005P  Num        3  Z4.
+                                         F.A2005   Num        8          Person's weight replicate 13
+                               pwgtp14   F.P2005P  Num        3  Z4.
+                                         F.A2005   Num        8          Person's weight replicate 14
+                               pwgtp15   F.P2005P  Num        3  Z4.
+                                         F.A2005   Num        8          Person's weight replicate 15
+                               pwgtp16   F.P2005P  Num        3  Z4.
+                                         F.A2005   Num        8          Person's weight replicate 16
+                               pwgtp17   F.P2005P  Num        3  Z4.
+                                         F.A2005   Num        8          Person's weight replicate 17
+                               pwgtp18   F.P2005P  Num        3  Z4.
+                                         F.A2005   Num        8          Person's weight replicate 18
+                               pwgtp19   F.P2005P  Num        3  Z4.
+                                         F.A2005   Num        8          Person's weight replicate 19
+                                                           The SAS System                           11:34 Friday, April 17, 2015  13
+
+                                                       The COMPARE Procedure
+                                                Comparison of F.P2005P with F.A2005
+                                                           (Method=EXACT)
+
+                                       Listing of Common Variables with Differing Attributes
+
+                               Variable  Dataset   Type  Length  Format  Label
+
+                               pwgtp20   F.P2005P  Num        3  Z4.
+                                         F.A2005   Num        8          Person's weight replicate 20
+                               pwgtp21   F.P2005P  Num        3  Z4.
+                                         F.A2005   Num        8          Person's weight replicate 21
+                               pwgtp22   F.P2005P  Num        3  Z4.
+                                         F.A2005   Num        8          Person's weight replicate 22
+                               pwgtp23   F.P2005P  Num        3  Z4.
+                                         F.A2005   Num        8          Person's weight replicate 23
+                               pwgtp24   F.P2005P  Num        3  Z4.
+                                         F.A2005   Num        8          Person's weight replicate 24
+                               pwgtp25   F.P2005P  Num        3  Z4.
+                                         F.A2005   Num        8          Person's weight replicate 25
+                               pwgtp26   F.P2005P  Num        3  Z4.
+                                         F.A2005   Num        8          Person's weight replicate 26
+                               pwgtp27   F.P2005P  Num        3  Z4.
+                                         F.A2005   Num        8          Person's weight replicate 27
+                               pwgtp28   F.P2005P  Num        3  Z4.
+                                         F.A2005   Num        8          Person's weight replicate 28
+                               pwgtp29   F.P2005P  Num        3  Z4.
+                                         F.A2005   Num        8          Person's weight replicate 29
+                               pwgtp30   F.P2005P  Num        3  Z4.
+                                         F.A2005   Num        8          Person's weight replicate 30
+                               pwgtp31   F.P2005P  Num        3  Z4.
+                                         F.A2005   Num        8          Person's weight replicate 31
+                               pwgtp32   F.P2005P  Num        3  Z4.
+                                         F.A2005   Num        8          Person's weight replicate 32
+                               pwgtp33   F.P2005P  Num        3  Z4.
+                                         F.A2005   Num        8          Person's weight replicate 33
+                               pwgtp34   F.P2005P  Num        3  Z4.
+                                         F.A2005   Num        8          Person's weight replicate 34
+                               pwgtp35   F.P2005P  Num        3  Z4.
+                                         F.A2005   Num        8          Person's weight replicate 35
+                               pwgtp36   F.P2005P  Num        3  Z4.
+                                         F.A2005   Num        8          Person's weight replicate 36
+                               pwgtp37   F.P2005P  Num        3  Z4.
+                                         F.A2005   Num        8          Person's weight replicate 37
+                               pwgtp38   F.P2005P  Num        3  Z4.
+                                         F.A2005   Num        8          Person's weight replicate 38
+                               pwgtp39   F.P2005P  Num        3  Z4.
+                                         F.A2005   Num        8          Person's weight replicate 39
+                               pwgtp40   F.P2005P  Num        3  Z4.
+                                         F.A2005   Num        8          Person's weight replicate 40
+                               pwgtp41   F.P2005P  Num        3  Z4.
+                                         F.A2005   Num        8          Person's weight replicate 41
+                               pwgtp42   F.P2005P  Num        3  Z4.
+                                         F.A2005   Num        8          Person's weight replicate 42
+                               pwgtp43   F.P2005P  Num        3  Z4.
+                                         F.A2005   Num        8          Person's weight replicate 43
+                                                           The SAS System                           11:34 Friday, April 17, 2015  14
+
+                                                       The COMPARE Procedure
+                                                Comparison of F.P2005P with F.A2005
+                                                           (Method=EXACT)
+
+                                       Listing of Common Variables with Differing Attributes
+
+                               Variable  Dataset   Type  Length  Format  Label
+
+                               pwgtp44   F.P2005P  Num        3  Z4.
+                                         F.A2005   Num        8          Person's weight replicate 44
+                               pwgtp45   F.P2005P  Num        3  Z4.
+                                         F.A2005   Num        8          Person's weight replicate 45
+                               pwgtp46   F.P2005P  Num        3  Z4.
+                                         F.A2005   Num        8          Person's weight replicate 46
+                               pwgtp47   F.P2005P  Num        3  Z4.
+                                         F.A2005   Num        8          Person's weight replicate 47
+                               pwgtp48   F.P2005P  Num        3  Z4.
+                                         F.A2005   Num        8          Person's weight replicate 48
+                               pwgtp49   F.P2005P  Num        3  Z4.
+                                         F.A2005   Num        8          Person's weight replicate 49
+                               pwgtp50   F.P2005P  Num        3  Z4.
+                                         F.A2005   Num        8          Person's weight replicate 50
+                               pwgtp51   F.P2005P  Num        3  Z4.
+                                         F.A2005   Num        8          Person's weight replicate 51
+                               pwgtp52   F.P2005P  Num        3  Z4.
+                                         F.A2005   Num        8          Person's weight replicate 52
+                               pwgtp53   F.P2005P  Num        3  Z4.
+                                         F.A2005   Num        8          Person's weight replicate 53
+                               pwgtp54   F.P2005P  Num        3  Z4.
+                                         F.A2005   Num        8          Person's weight replicate 54
+                               pwgtp55   F.P2005P  Num        3  Z4.
+                                         F.A2005   Num        8          Person's weight replicate 55
+                               pwgtp56   F.P2005P  Num        3  Z4.
+                                         F.A2005   Num        8          Person's weight replicate 56
+                               pwgtp57   F.P2005P  Num        3  Z4.
+                                         F.A2005   Num        8          Person's weight replicate 57
+                               pwgtp58   F.P2005P  Num        3  Z4.
+                                         F.A2005   Num        8          Person's weight replicate 58
+                               pwgtp59   F.P2005P  Num        3  Z4.
+                                         F.A2005   Num        8          Person's weight replicate 59
+                               pwgtp60   F.P2005P  Num        3  Z4.
+                                         F.A2005   Num        8          Person's weight replicate 60
+                               pwgtp61   F.P2005P  Num        3  Z4.
+                                         F.A2005   Num        8          Person's weight replicate 61
+                               pwgtp62   F.P2005P  Num        3  Z4.
+                                         F.A2005   Num        8          Person's weight replicate 62
+                               pwgtp63   F.P2005P  Num        3  Z4.
+                                         F.A2005   Num        8          Person's weight replicate 63
+                               pwgtp64   F.P2005P  Num        3  Z4.
+                                         F.A2005   Num        8          Person's weight replicate 64
+                               pwgtp65   F.P2005P  Num        3  Z4.
+                                         F.A2005   Num        8          Person's weight replicate 65
+                               pwgtp66   F.P2005P  Num        3  Z4.
+                                         F.A2005   Num        8          Person's weight replicate 66
+                               pwgtp67   F.P2005P  Num        3  Z4.
+                                         F.A2005   Num        8          Person's weight replicate 67
+                                                           The SAS System                           11:34 Friday, April 17, 2015  15
+
+                                                       The COMPARE Procedure
+                                                Comparison of F.P2005P with F.A2005
+                                                           (Method=EXACT)
+
+                                       Listing of Common Variables with Differing Attributes
+
+                               Variable  Dataset   Type  Length  Format  Label
+
+                               pwgtp68   F.P2005P  Num        3  Z4.
+                                         F.A2005   Num        8          Person's weight replicate 68
+                               pwgtp69   F.P2005P  Num        3  Z4.
+                                         F.A2005   Num        8          Person's weight replicate 69
+                               pwgtp70   F.P2005P  Num        3  Z4.
+                                         F.A2005   Num        8          Person's weight replicate 70
+                               pwgtp71   F.P2005P  Num        3  Z4.
+                                         F.A2005   Num        8          Person's weight replicate 71
+                               pwgtp72   F.P2005P  Num        3  Z4.
+                                         F.A2005   Num        8          Person's weight replicate 72
+                               pwgtp73   F.P2005P  Num        3  Z4.
+                                         F.A2005   Num        8          Person's weight replicate 73
+                               pwgtp74   F.P2005P  Num        3  Z4.
+                                         F.A2005   Num        8          Person's weight replicate 74
+                               pwgtp75   F.P2005P  Num        3  Z4.
+                                         F.A2005   Num        8          Person's weight replicate 75
+                               pwgtp76   F.P2005P  Num        3  Z4.
+                                         F.A2005   Num        8          Person's weight replicate 76
+                               pwgtp77   F.P2005P  Num        3  Z4.
+                                         F.A2005   Num        8          Person's weight replicate 77
+                               pwgtp78   F.P2005P  Num        3  Z4.
+                                         F.A2005   Num        8          Person's weight replicate 78
+                               pwgtp79   F.P2005P  Num        3  Z4.
+                                         F.A2005   Num        8          Person's weight replicate 79
+                               pwgtp80   F.P2005P  Num        3  Z4.
+                                         F.A2005   Num        8          Person's weight replicate 80
+
+
+                                                        Observation Summary
+
+                                                   Observation      Base  Compare
+
+                                                   First Obs           1        1
+                                                   First Unequal       1        1
+                                                   Last  Unequal 2878380  2878380
+                                                   Last  Match   2878380  2878380
+                                                   Last  Obs           .  2964564
+
+                               Number of Observations in Common: 2878380.
+                               Number of Observations in F.A2005 but not in F.P2005P: 86184.
+                               Total Number of Observations Read from F.P2005P: 2878380.
+                               Total Number of Observations Read from F.A2005: 2964564.
+
+                               Number of Observations with Some Compared Variables Unequal: 2878380.
+                               Number of Observations with All Compared Variables Equal: 0.
+                                                           The SAS System                           11:34 Friday, April 17, 2015  16
+
+                                                       The COMPARE Procedure
+                                                Comparison of F.P2005P with F.A2005
+                                                           (Method=EXACT)
+
+                                                     Values Comparison Summary
+
+                                  Number of Variables Compared with All Observations Equal: 0.
+                                  Number of Variables Compared with Some Observations Unequal: 85.
+                                  Number of Variables with Missing Value Differences: 85.
+                                  Total Number of Values which Compare Unequal: 237654087.
+                                  Maximum Difference: 3775.
+
+
+                                             All Variables Compared have Unequal Values
+
+           Variable  Type  Len1 Len2   Label                       Compare Label                 Ndif   MaxDif  MissDif
+
+           sporder   NUM      8    8   Person key after swapping   Person Number               2.09E6   19.000    83597
+           JWMNP     NUM      3    8   PUMS Minutes to work        Travel time to work (mins)  1.88E6      199   1.41E6
+           JWRIP     NUM      3    8   PUMS Total riders           Vehicle occupancy (to work) 1.47E6    9.000   1.37E6
+           YOEP      NUM      3    8   PUMS Year of entry          Year of Entry               612633   86.000   576928
+           POVPIP    NUM      3    8   PUMS Poverty index          Percent of poverty status   2.65E6      501   102128
+           pwgtp1    NUM      3    8                               Person's weight replicate 1 2.86E6     2066    83597
+           pwgtp2    NUM      3    8                               Person's weight replicate 2 2.86E6     3180    83597
+           pwgtp3    NUM      3    8                               Person's weight replicate 3 2.86E6     3117    83597
+           pwgtp4    NUM      3    8                               Person's weight replicate 4 2.86E6     3070    83597
+           pwgtp5    NUM      3    8                               Person's weight replicate 5 2.86E6     2863    83597
+           pwgtp6    NUM      3    8                               Person's weight replicate 6 2.86E6     3563    83597
+           pwgtp7    NUM      3    8                               Person's weight replicate 7 2.86E6     3771    83597
+           pwgtp8    NUM      3    8                               Person's weight replicate 8 2.86E6     2995    83597
+           pwgtp9    NUM      3    8                               Person's weight replicate 9 2.86E6     2745    83597
+           pwgtp10   NUM      3    8                               Person's weight replicate 102.86E6     3176    83597
+           pwgtp11   NUM      3    8                               Person's weight replicate 112.86E6     3656    83597
+           pwgtp12   NUM      3    8                               Person's weight replicate 122.86E6     3252    83597
+           pwgtp13   NUM      3    8                               Person's weight replicate 132.86E6     3748    83597
+           pwgtp14   NUM      3    8                               Person's weight replicate 142.86E6     3114    83597
+           pwgtp15   NUM      3    8                               Person's weight replicate 152.86E6     3132    83597
+           pwgtp16   NUM      3    8                               Person's weight replicate 162.86E6     3268    83597
+           pwgtp17   NUM      3    8                               Person's weight replicate 172.86E6     3195    83597
+           pwgtp18   NUM      3    8                               Person's weight replicate 182.86E6     3113    83597
+           pwgtp19   NUM      3    8                               Person's weight replicate 192.86E6     3033    83597
+           pwgtp20   NUM      3    8                               Person's weight replicate 202.86E6     3346    83597
+           pwgtp21   NUM      3    8                               Person's weight replicate 212.86E6     3743    83597
+           pwgtp22   NUM      3    8                               Person's weight replicate 222.86E6     3336    83597
+           pwgtp23   NUM      3    8                               Person's weight replicate 232.86E6     3099    83597
+           pwgtp24   NUM      3    8                               Person's weight replicate 242.86E6     3050    83597
+           pwgtp25   NUM      3    8                               Person's weight replicate 252.86E6     3257    83597
+           pwgtp26   NUM      3    8                               Person's weight replicate 262.86E6     3024    83597
+           pwgtp27   NUM      3    8                               Person's weight replicate 272.86E6     3133    83597
+           pwgtp28   NUM      3    8                               Person's weight replicate 282.86E6     3221    83597
+           pwgtp29   NUM      3    8                               Person's weight replicate 292.86E6     3606    83597
+           pwgtp30   NUM      3    8                               Person's weight replicate 302.86E6     3193    83597
+           pwgtp31   NUM      3    8                               Person's weight replicate 312.86E6     2998    83597
+           pwgtp32   NUM      3    8                               Person's weight replicate 322.86E6     3202    83597
+           pwgtp33   NUM      3    8                               Person's weight replicate 332.86E6     3097    83597
+           pwgtp34   NUM      3    8                               Person's weight replicate 342.86E6     2994    83597
+           pwgtp35   NUM      3    8                               Person's weight replicate 352.86E6     3293    83597
+                                                           The SAS System                           11:34 Friday, April 17, 2015  17
+
+                                                       The COMPARE Procedure
+                                                Comparison of F.P2005P with F.A2005
+                                                           (Method=EXACT)
+
+                                             All Variables Compared have Unequal Values
+
+           Variable  Type  Len1 Len2   Label                       Compare Label                 Ndif   MaxDif  MissDif
+
+           pwgtp36   NUM      3    8                               Person's weight replicate 362.86E6     2991    83597
+           pwgtp37   NUM      3    8                               Person's weight replicate 372.86E6     3447    83597
+           pwgtp38   NUM      3    8                               Person's weight replicate 382.86E6     3232    83597
+           pwgtp39   NUM      3    8                               Person's weight replicate 392.86E6     3068    83597
+           pwgtp40   NUM      3    8                               Person's weight replicate 402.86E6     3420    83597
+           pwgtp41   NUM      3    8                               Person's weight replicate 412.86E6     2117    83597
+           pwgtp42   NUM      3    8                               Person's weight replicate 422.86E6     3271    83597
+           pwgtp43   NUM      3    8                               Person's weight replicate 432.86E6     2905    83597
+           pwgtp44   NUM      3    8                               Person's weight replicate 442.86E6     3414    83597
+           pwgtp45   NUM      3    8                               Person's weight replicate 452.86E6     3127    83597
+           pwgtp46   NUM      3    8                               Person's weight replicate 462.86E6     3232    83597
+           pwgtp47   NUM      3    8                               Person's weight replicate 472.86E6     3767    83597
+           pwgtp48   NUM      3    8                               Person's weight replicate 482.86E6     3237    83597
+           pwgtp49   NUM      3    8                               Person's weight replicate 492.86E6     3597    83597
+           pwgtp50   NUM      3    8                               Person's weight replicate 502.86E6     2978    83597
+           pwgtp51   NUM      3    8                               Person's weight replicate 512.86E6     3256    83597
+           pwgtp52   NUM      3    8                               Person's weight replicate 522.86E6     3230    83597
+           pwgtp53   NUM      3    8                               Person's weight replicate 532.86E6     3703    83597
+           pwgtp54   NUM      3    8                               Person's weight replicate 542.86E6     3332    83597
+           pwgtp55   NUM      3    8                               Person's weight replicate 552.86E6     3321    83597
+           pwgtp56   NUM      3    8                               Person's weight replicate 562.86E6     3109    83597
+           pwgtp57   NUM      3    8                               Person's weight replicate 572.86E6     3031    83597
+           pwgtp58   NUM      3    8                               Person's weight replicate 582.86E6     3031    83597
+           pwgtp59   NUM      3    8                               Person's weight replicate 592.86E6     3019    83597
+           pwgtp60   NUM      3    8                               Person's weight replicate 602.86E6     3592    83597
+           pwgtp61   NUM      3    8                               Person's weight replicate 612.86E6     3279    83597
+           pwgtp62   NUM      3    8                               Person's weight replicate 622.86E6     3561    83597
+           pwgtp63   NUM      3    8                               Person's weight replicate 632.86E6     2992    83597
+           pwgtp64   NUM      3    8                               Person's weight replicate 642.86E6     3118    83597
+           pwgtp65   NUM      3    8                               Person's weight replicate 652.86E6     3256    83597
+           pwgtp66   NUM      3    8                               Person's weight replicate 662.86E6     3453    83597
+           pwgtp67   NUM      3    8                               Person's weight replicate 672.86E6     3492    83597
+           pwgtp68   NUM      3    8                               Person's weight replicate 682.86E6     3196    83597
+           pwgtp69   NUM      3    8                               Person's weight replicate 692.86E6     3458    83597
+           pwgtp70   NUM      3    8                               Person's weight replicate 702.86E6     3276    83597
+           pwgtp71   NUM      3    8                               Person's weight replicate 712.86E6     2983    83597
+           pwgtp72   NUM      3    8                               Person's weight replicate 722.86E6     3210    83597
+           pwgtp73   NUM      3    8                               Person's weight replicate 732.86E6     3464    83597
+           pwgtp74   NUM      3    8                               Person's weight replicate 742.86E6     3230    83597
+           pwgtp75   NUM      3    8                               Person's weight replicate 752.86E6     3084    83597
+           pwgtp76   NUM      3    8                               Person's weight replicate 762.86E6     3775    83597
+           pwgtp77   NUM      3    8                               Person's weight replicate 772.86E6     3493    83597
+           pwgtp78   NUM      3    8                               Person's weight replicate 782.86E6     2814    83597
+           pwgtp79   NUM      3    8                               Person's weight replicate 792.86E6     3449    83597
+           pwgtp80   NUM      3    8                               Person's weight replicate 802.86E6     3089    83597
+
